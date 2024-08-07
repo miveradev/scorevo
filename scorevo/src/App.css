@@ -2,4 +2,12 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  font-size: 1.2rem;
 }
