@@ -2,7 +2,8 @@ import './Stopwatch.css'
 import laliga_logo_white from '../assets/laliga_white.png';
 import mallorca from '../assets/badges/mallorca.png';
 import madrid from '../assets/badges/realmadrid.png';
-import React, { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import Badge from './Badge';
 function Stopwatch() {
 
     const [isRunning, setIsRunning] = useState(false);
@@ -64,10 +65,10 @@ function Stopwatch() {
                     </div>
                 </div>
                 <div className="badge-home">
-                    <img src={mallorca} alt="rcdmallorca" />
+                    <Badge teamName="mallorca"/>
                 </div>
                 <div className="badge-away">
-                    <img src={madrid} alt="realmadrid" />
+                    <Badge teamName="realmadrid"/>
                 </div>
                 <div className="score-home">
                     <span>1</span>
