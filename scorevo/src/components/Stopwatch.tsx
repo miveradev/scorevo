@@ -12,7 +12,9 @@ function Stopwatch() {
     const [time, setTime] = useState(0);
     const intervalRef = useRef(0);
     const startTimeRef = useRef(0);
-    console.log(LaLiga)
+    
+    const [homeTeam, setHomeTeam] = useState("mallorca");
+    const [awayTeam, setAwayTeam] = useState("realmadrid");
 
     useEffect(() => {
         //If the stopwatch is running, make some math
@@ -56,8 +58,40 @@ function Stopwatch() {
         return `${minutesDoubleDigit}:${secondsDoubleDigit}`;
     }
 
+    function handleTeamSelectorHome(event: any) {
+        setHomeTeam(event.target.value);
+    }
+
+    function handleTeamSelectorAway(event: any) {
+        setAwayTeam(event.target.value);
+    }
+
     return(
         <>
+            <div className="team-selector">
+                <div className="team-selector-home">
+                    <h3>Home</h3>
+                    <select onChange={handleTeamSelectorHome}>
+                        {
+                            LaLiga.map(team => (
+                                <option value={team.img} label={team.name} selected={team.img === "mallorca" ?? "selected"}></option>
+                            ))
+                        }
+                    </select>
+                </div>
+                <div className="team-selector-away">
+                    <h3>Away</h3>
+                    <select onChange={handleTeamSelectorAway}>
+                        {
+                            LaLiga.map(team => (
+                                <option value={team.img} label={team.name} selected={team.img === "realmadrid" ?? "selected"}></option>
+                            ))
+                        }
+                    </select>
+                </div>
+            </div>
+
+
             <div className="stopwatch">
                 <div className="logo">
                     <img className="logo-img" src={laliga_logo_white} alt="laliga_logo" />
@@ -68,10 +102,10 @@ function Stopwatch() {
                     </div>
                 </div>
                 <div className="badge-home">
-                    <Badge teamName="mallorca"/>
+                    <Badge teamName={homeTeam}/>
                 </div>
                 <div className="badge-away">
-                    <Badge teamName="realmadrid"/>
+                    <Badge teamName={awayTeam}/>
                 </div>
                 <div className="score-home">
                     <span>1</span>
