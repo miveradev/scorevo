@@ -16,6 +16,10 @@ function Stopwatch() {
     const [homeTeam, setHomeTeam] = useState("mallorca");
     const [awayTeam, setAwayTeam] = useState("realmadrid");
 
+    const [homeTeamScore, setHomeTeamScore] = useState(0);
+    const [awayTeamScore, setAwayTeamScore] = useState(0);
+
+
     useEffect(() => {
         //If the stopwatch is running, make some math
         if(isRunning) {
@@ -45,6 +49,8 @@ function Stopwatch() {
     function reset() {
         //Reset the time to the initial
         setTime(0);
+        setHomeTeamScore(0);
+        setAwayTeamScore(0);
         setIsRunning(false);
     }
 
@@ -66,6 +72,22 @@ function Stopwatch() {
         setAwayTeam(event.target.value);
     }
 
+    function handleHomeTeamScoreUp() {
+        setHomeTeamScore(homeTeamScore + 1);
+    }
+
+    function handleHomeTeamScoreDown() {
+        setHomeTeamScore(homeTeamScore > 0 ? homeTeamScore - 1 : homeTeamScore);
+    }
+
+    function handleAwayTeamScoreUp() {
+        setAwayTeamScore(awayTeamScore + 1);
+    }
+
+    function handleAwayTeamScoreDown() {
+        setAwayTeamScore(awayTeamScore > 0 ? awayTeamScore - 1 : awayTeamScore);
+    }
+
     return(
         <>
             <div className="team-selector">
@@ -78,6 +100,10 @@ function Stopwatch() {
                             ))
                         }
                     </select>
+                    <div className="score-buttons">
+                        <button onClick={handleHomeTeamScoreUp}>+</button>
+                        <button onClick={handleHomeTeamScoreDown}>-</button>
+                    </div>
                 </div>
                 <div className="team-selector-away">
                     <h3>Away</h3>
@@ -88,6 +114,10 @@ function Stopwatch() {
                             ))
                         }
                     </select>
+                    <div className="score-buttons">
+                        <button onClick={handleAwayTeamScoreUp}>+</button>
+                        <button onClick={handleAwayTeamScoreDown}>-</button>
+                    </div>
                 </div>
             </div>
 
@@ -108,10 +138,10 @@ function Stopwatch() {
                     <Badge teamName={awayTeam}/>
                 </div>
                 <div className="score-home">
-                    <span>1</span>
+                    <span>{homeTeamScore}</span>
                 </div>
                 <div className="score-away">
-                    <span>0</span>
+                    <span>{awayTeamScore}</span>
                 </div>
                 
             </div>

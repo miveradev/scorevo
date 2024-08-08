@@ -1,3 +1,9 @@
+h1 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 20px;
+}
+
 .stopwatch {
     display: grid; 
     grid-template-columns: repeat(2, 1fr) repeat(2, 1.3fr); 
@@ -98,6 +104,9 @@
 }
 
 .control-panel button {
+    width: 100px;
+    height: 40px;
+    font-size: 1.2rem;
     cursor: pointer;
     background: white;
     border: none;
@@ -118,7 +127,7 @@
     justify-content: center;
     gap: 30px;
     line-height: normal;
-    padding-bottom: 50px;
+    padding-bottom: 3rem;
 }
 
 .team-selector select {
@@ -128,5 +137,30 @@
     font-size: 1rem;
     padding: 5px;
     font-weight: bold;
-    border-radius: 10px;
+    border-radius: 8px;
+    margin-bottom: 0.7rem;
+}
+
+.score-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.score-buttons button {
+    cursor: pointer;
+    background: white;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+    width: 40px;
+    height: 40px;
+}
+
+.score-buttons button:hover {
+    background: #ef5149;
+    color: white;
 }
