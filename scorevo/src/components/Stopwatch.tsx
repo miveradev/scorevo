@@ -4,12 +4,15 @@ import mallorca from '../assets/badges/mallorca.png';
 import madrid from '../assets/badges/realmadrid.png';
 import { useState, useEffect, useRef } from 'react'
 import Badge from './Badge';
+import { LaLiga } from "../teams/laliga";
+
 function Stopwatch() {
 
     const [isRunning, setIsRunning] = useState(false);
     const [time, setTime] = useState(0);
     const intervalRef = useRef(0);
     const startTimeRef = useRef(0);
+    console.log(LaLiga)
 
     useEffect(() => {
         //If the stopwatch is running, make some math
