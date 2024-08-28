@@ -1,7 +1,5 @@
 import "./Stopwatch.css"
 import laliga_logo_white from "../assets/laliga_white.png"
-import mallorca from "../assets/badges/mallorca.png"
-import madrid from "../assets/badges/realmadrid.png"
 import { useState, useEffect, useRef } from "react"
 import Badge from "./Badge"
 import { LaLiga } from "../teams/laliga"
@@ -119,19 +117,19 @@ function Stopwatch() {
 				<div className="logo">
 					<img className="logo-img" src={laliga_logo_white} alt="laliga_logo" />
 				</div>
+				<div className="badge">
+					<Badge teamName={homeTeam} />
+				</div>
+				<div className="score">
+					<span>{homeTeamScore}</span>
+				</div>
 				<div className="timer">
 					<span>{formatTime()}</span>
 				</div>
-				<div className="badge-home">
-					<Badge teamName={homeTeam} />
-				</div>
-				<div className="badge-away">
+				<div className="badge">
 					<Badge teamName={awayTeam} />
 				</div>
-				<div className="score-home">
-					<span>{homeTeamScore}</span>
-				</div>
-				<div className="score-away">
+				<div className="score">
 					<span>{awayTeamScore}</span>
 				</div>
 			</div>
