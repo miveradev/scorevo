@@ -20,3 +20,20 @@
 #root h1 span {
 	color: #f1cf57;
 }
+
+#root p {
+	margin-top: 2rem;
+	font-size: 12px;
+	font-weight: 100;
+}
+
+#root p a {
+	font-weight: bold;
+	text-decoration: none;
+	color: rgb(245, 245, 245);
+	transition: all 0.3s ease-in-out;
+}
+
+#root p a:hover {
+	color: #ba6fe8;
+}

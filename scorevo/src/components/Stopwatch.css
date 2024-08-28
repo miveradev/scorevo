@@ -39,7 +39,7 @@ h1 {
 
 .timer {
 	background: rgb(245, 245, 245);
-	color: #191c21;
+	color: #1d1d1d;
 	font-size: 2.5rem;
 	font-weight: bold;
 	display: flex;
@@ -52,7 +52,7 @@ h1 {
 }
 
 .badge {
-	background: #191c21;
+	background: #1d1d1d;
 	color: rgb(245, 245, 245);
 	font-size: 2.5rem;
 	font-weight: bold;
@@ -67,7 +67,7 @@ h1 {
 
 .score {
 	background: rgb(245, 245, 245);
-	color: #191c21;
+	color: #1d1d1d;
 	font-size: 4rem;
 	font-weight: bold;
 	display: flex;
