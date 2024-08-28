@@ -16,6 +16,8 @@ function Stopwatch() {
 	const [homeTeamScore, setHomeTeamScore] = useState(0)
 	const [awayTeamScore, setAwayTeamScore] = useState(0)
 
+	const [isGreenScreenActive, setIsGreenScreenActive] = useState(false)
+
 	useEffect(() => {
 		//If the stopwatch is running, make some math
 		if (isRunning) {
@@ -84,6 +86,10 @@ function Stopwatch() {
 		setAwayTeamScore(awayTeamScore > 0 ? awayTeamScore - 1 : awayTeamScore)
 	}
 
+	function handleToggleGreenScreen() {
+		setIsGreenScreenActive(!isGreenScreenActive)
+	}
+
 	return (
 		<div className="stopwatch-container">
 			<div className="team-selector">
@@ -113,28 +119,29 @@ function Stopwatch() {
 				</div>
 			</div>
 
-			<div className="stopwatch">
-				<div className="logo">
-					<img className="logo-img" src={laliga_logo_white} alt="laliga_logo" />
-				</div>
-				<div className="badge">
-					<Badge teamName={homeTeam} />
-				</div>
-				<div className="score">
-					<span>{homeTeamScore}</span>
-				</div>
-				<div className="timer">
-					<span>{formatTime()}</span>
-				</div>
-				<div className="badge">
-					<Badge teamName={awayTeam} />
-				</div>
-				<div className="score">
-					<span>{awayTeamScore}</span>
+			<div className={"scoreboard-container " + (isGreenScreenActive ? "green-screen" : "")}>
+				<div className="stopwatch">
+					<div className="logo">
+						<img className="logo-img" src={laliga_logo_white} alt="laliga_logo" />
+					</div>
+					<div className="badge">
+						<Badge teamName={homeTeam} />
+					</div>
+					<div className="score">
+						<span>{homeTeamScore}</span>
+					</div>
+					<div className="timer">
+						<span>{formatTime()}</span>
+					</div>
+					<div className="badge">
+						<Badge teamName={awayTeam} />
+					</div>
+					<div className="score">
+						<span>{awayTeamScore}</span>
+					</div>
 				</div>
 			</div>
-			<br />
-			<br />
+
 			<div className="control-panel">
 				<button className="start-button" onClick={start}>
 					Start
@@ -144,6 +151,12 @@ function Stopwatch() {
 				</button>
 				<button className="reset-button" onClick={reset}>
 					Reset
+				</button>
+			</div>
+
+			<div className="green-screen-control">
+				<button className="green-screen-button" onClick={handleToggleGreenScreen}>
+					Toggle GreenScreen
 				</button>
 			</div>
 		</div>

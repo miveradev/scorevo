@@ -8,10 +8,18 @@ h1 {
 	padding-bottom: 20px;
 }
 
+.scoreboard-container {
+	padding: 50px;
+}
+
+.green-screen {
+	background: rgb(9, 255, 9) !important;
+}
+
 .stopwatch {
 	display: grid;
 	font-family: "Plus Jakarta Sans", sans-serif;
-	grid-template-columns: 2fr 1fr 1fr;
+	grid-template-columns: 200px 100px 100px;
 	grid-template-rows: 120px 120px;
 	gap: 0px;
 }
@@ -73,9 +81,10 @@ h1 {
 
 /* CONTROL PANEL BUTTONS */
 .control-panel {
-	max-width: 500px;
+	margin-top: 2rem;
 	display: flex;
 	justify-content: center;
+	align-items: cener;
 	gap: 20px;
 }
 
@@ -105,13 +114,34 @@ h1 {
 	background: #f1cf57;
 }
 
+.green-screen-control {
+	margin: 1rem 2rem 0 2rem;
+}
+
+.green-screen-button {
+	width: 80%;
+	height: 40px;
+	font-size: 1.2rem;
+	cursor: pointer;
+	background: rgb(245, 245, 245);
+	border: none;
+	font-size: 1rem;
+	font-weight: bold;
+	border-radius: 10px;
+	transition: 0.3s;
+}
+
+.green-screen-button:hover {
+	background: #f1cf57;
+}
+
 .team-selector {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	gap: 30px;
 	line-height: normal;
-	padding-bottom: 3rem;
+	padding-bottom: 1rem;
 	font-family: "JetBrains Mono", sans-serif;
 }
 
